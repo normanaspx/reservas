@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,8 +16,8 @@
     <link href="{{asset("css/signin.css")}}" rel="stylesheet">
 </head>
 
-<body class="text-center bg-danger">
-<form class="form-signin bg-dark text-white" method="POST" action="{{url('/login')}}" >
+<body class="text-center bg-light">
+<form class="form-signin bg-primary text-primary" method="POST" action="{{url('/login')}}" >
     {{csrf_field()}}
     @if(session()->has('flash'))
         <div class="alert-info">{{session('flash')}}</div>
@@ -36,9 +36,8 @@
     <button class="btn btn-lg btn-outline-light btn-block " type="submit">Inicio</button>
     <div class="">
 	    <br>
-    	 <img src="{{URL::asset('media/logo.png')}}" alt="profile Pic" height="90" width="200">
+    	 <img src="{{URL::asset('media/fondo.jpg')}}" alt="profile Pic" height="90" width="200">
     </div>
-    <p class="mt-5 mb-3 text-muted" style="color: #fff;"> EuroHostal 2018-2019</p>
 </form>
 </body>
 </html>

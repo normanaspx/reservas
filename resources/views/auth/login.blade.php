@@ -18,7 +18,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 
-				<h1 class="panel-title">Acceso al sistema</h1>
+				<h1 class="panel-title">Acceso al sdfdssistema</h1>
 
 				</div>
 				<div class="panel-body">

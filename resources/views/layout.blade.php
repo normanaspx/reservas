@@ -22,7 +22,6 @@
     <input class="form-control form-control-dark w-100 " type="text" placeholder="Buscar..." aria-label="Search">
     <div class="panel-body">
         <form method="POST" action="">
-            {{csrf_field()}}
             <ul class="navbar-nav px-3">
                 <li class="nav-item text-nowrap">
                     <button class="btn btn-primary btn-block bg-danger" style="border-color:#dc3545;">Desconectar</button>
@@ -44,7 +43,7 @@
 					 <span class="icon-bar"></span>
 			   </a>
 		   </div>
-
+            @include('main.menu')
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4">
