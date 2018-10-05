@@ -44,7 +44,7 @@
 					 <span class="icon-bar"></span>
 			   </a>
 		   </div>
-     
+
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4">
