@@ -18,16 +18,19 @@
 </head>
 
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <h5 class="my-0 mr-md-auto font-weight-normal">Linea de autobuses</h5>
+      <h5 class="my-0 mr-md-5 font-weight-normal">Linea de autobuses</h5>
+	 <a class=" my-0 mr-md-5" href="#">Quienes somos</a>
+	 <a class="my-0 mr-md-auto text-dark" href="#">Servicios</a>
       <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="#">Galeria</a>
-        <a class="p-2 text-dark" href="#">Servicios</a>
+        <a class="p-2 text-dark" href="#">Galeria</a
+          <a class="p-2 text-dark" href="#">Reservaciones</a>
+            <a class="p-2 text-dark" href="#">Contacto</a>
       </nav>
-      <a class="btn btn-outline-primary" href="{{url('/login')}}">Sign up</a>
+      <a class="btn btn-outline-primary" href="{{url('/login')}}">Iniciar sesion</a>
     </div>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Pricing</h1>
+      <h1 class="display-4">Linea de autobuses</h1>
       <p class="lead"><br>Somos Línea de Autobuses una empresa especializada en el
 		 servicio de transportación de pasajeros, con más de 50 años de brindar
 		  nuestros servicios en Guatemala, nos dedicamos a brindar servicio a las

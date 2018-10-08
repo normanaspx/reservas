@@ -11,13 +11,20 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{asset("css/bootstrap.min.css")}}" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
     <link href="{{asset("css/signin.css")}}" rel="stylesheet">
+    <style media="screen">
+		    html{
+			background: url("{{asset("media/fondo.jpg")}}") no-repeat center center fixed;
+			background-size: cover;
+		}
+		body{
+			background: none;
+		}
+    </style>
 </head>
 
-<body class="text-center bg-light">
-<form class="form-signin bg-primary text-primary" method="POST" action="{{url('/login')}}" >
+<body class="text-center">
+<form class="form-signin  text-primary" method="POST" action="{{url('/login')}}" >
     {{csrf_field()}}
     @if(session()->has('flash'))
         <div class="alert-info">{{session('flash')}}</div>
@@ -29,14 +36,15 @@
         {!! $errors->first('email','<span class="help-block">:message </span>') !!}
     </div>
     <div class="form-group{{$errors->has('password')?'has-error':''}}" >
-        <input type="password" name="password" class="form-control" placeholder="EJ: 12345" required>
+        <input type="password" name="password" class="form-control" placeholder="password" required>
         {!! $errors->first('password','<span class="help-block">:message </span>') !!}
     </div>
 
-    <button class="btn btn-lg btn-outline-light btn-block " type="submit">Inicio</button>
+    <button class="btn btn-lg btn-outline-light btn-block " type="submit">Acceder</button><br>
+    <a href="{{url('/signup')}}" class="badge badge-primary">Crear cuenta</a>
+    <a href="{{url('/')}}" class="badge badge-primary">Volver</a>
     <div class="">
 	    <br>
-    	 <img src="{{URL::asset('media/fondo.jpg')}}" alt="profile Pic" height="90" width="200">
     </div>
 </form>
 </body>
