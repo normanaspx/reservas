@@ -36,11 +36,11 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
       <h5 class="my-0 mr-md-5 font-weight-normal">Linea de autobuses</h5>
 	 <a class=" my-0 mr-md-5" href="#quienes">Quienes somos</a>
-	 <a class="my-0 mr-md-auto text-dark" href="{{url('/servicestab')}}">Servicios</a>
+	 <a class="my-0 mr-md-auto" href="{{url('/servicestab')}}">Servicios</a>
       <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="#">Galeria</a
-          <a class="p-2 text-dark" href="#">Reservaciones</a>
-            <a class="p-2 text-dark" href="#">Contacto</a>
+        <a class="p-2" href="{{url('/gallery')}}">Galeria</a>
+          <a class="p-2" href="#">Reservaciones</a>
+          <a class="p-2" href="#" data-toggle="modal" data-target="#exampleModal">Contacto</a>
       </nav>
       <a class="btn btn-outline-primary" href="{{url('/login')}}">Iniciar sesion</a>
     </div>
@@ -61,7 +61,7 @@
 		   Norte Zona 18 y lugar de destino las oficinas de la línea de autobuses
 		   en Poptún o Santa Elena, Petén Guatemala y viceversa.</p>
     </div><br>
-
+ 	@yield('modal-content')
     <div class="container">
 	    <h2 class="text-center">Destinos</h2>
 	    <hr>
@@ -74,7 +74,7 @@
 				 que se fue formando como una aglomeración urbana de la isla de
 				  Ciudad Flores localizada en la isla del Lago Petén Itzá
 				. Santa Elena de la Cruz está unida a Flores por un puente sobre el lago Petén Itzá.</p>
-	          <p class="card-text"><small class="text-muted"><a href="#">Ver horarios</a></small></p>
+	          <p class="card-text"><small class="text-muted"><a href="{{url('/departure')}}">Ver horarios</a></small></p>
 	        </div>
 	      </div>
 	      <div class="card">
@@ -83,7 +83,7 @@
 	          <h5 class="card-title">Póptun, Petén</h5>
 	          <p class="card-text">Es un municipio en el departamento de Petén, en la República de Guatemala.
 				 Es el segundo municipio más poblado del departamento y tiene frontera con Belice.</p>
- 	          <p class="card-text"><small class="text-muted"><a href="#">Ver horarios</a></small></p>
+ 	          <p class="card-text"><small class="text-muted"><a href="{{url('/departure')}}">Ver horarios</a></small></p>
 	        </div>
 	      </div>
 	    </div>
@@ -114,6 +114,25 @@
         </div>
       </footer>
 
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Contacto</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <label for="">Whatsapp: 52914919</label>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
     </div>
 <script
         src="https://code.jquery.com/jquery-3.3.1.js"
