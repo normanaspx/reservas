@@ -42,7 +42,7 @@
           <a class="p-2" href="#">Reservaciones</a>
           <a class="p-2" href="#" data-toggle="modal" data-target="#exampleModal">Contacto</a>
       </nav>
-      <a class="btn btn-outline-primary" href="{{url('/login')}}">Iniciar sesion</a>
+      <a class="btn btn-outline-primary" href="{{url('/service')}}">Iniciar sesion</a>
     </div>
     <div class="jumbotron jumbotron-fluid bg-image">
       <div class="container bg-mycolor">
@@ -129,7 +129,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <!--<button type="button" class="btn btn-primary">Save changes</button>-->
           </div>
         </div>
       </div>

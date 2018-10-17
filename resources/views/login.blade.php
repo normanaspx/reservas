@@ -24,7 +24,7 @@
 </head>
 
 <body class="text-center">
-<form class="form-signin  text-primary" method="POST" action="{{url('/login')}}" >
+<form class="form-signin  text-primary" method="POST" action="{{url('login')}}" >
     {{csrf_field()}}
     @if(session()->has('flash'))
         <div class="alert-info">{{session('flash')}}</div>

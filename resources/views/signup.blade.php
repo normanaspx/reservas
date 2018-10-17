@@ -15,7 +15,8 @@
 	</head>
 	<body>
 		<div class="container">
-			<form class="bg-image">
+			<form class="bg-image" method="post" action="{{url('/signup')}}">
+				{{ csrf_field() }}
 				<div class="jumbotron jumbotron-fluid">
 				  <div class="container">
 				    <h1 class="display-4">Crear cuenta</h1>
@@ -25,15 +26,15 @@
 				<div class="form-row">
 				  <div class="form-group col-md-3">
 				    <label for="inputName1">Nombres</label>
-				    <input type="email" class="form-control" id="inputName1" placeholder="" autofocus>
+				    <input type="text" name="names" class="form-control" id="inputName1" placeholder="" autofocus>
 				  </div>
 				  <div class="form-group col-md-3">
 				    <label for="inputApellido1">Apellidos</label>
-				    <input type="email" class="form-control" id="inputApellido1" placeholder="" autofocus>
+				    <input type="text" name="second_name" class="form-control" id="inputApellido1" placeholder="" autofocus>
 				  </div>
 				  <div class="form-group col-md-3">
 					  <label for="inputDate">Fecha de nacimiento</label>
-					  <input type="date" class="form-control" id="inputDate" placeholder="">
+					  <input type="date" name="birthday_date" class="form-control" id="inputDate" placeholder="">
 				  </div>
 				  <div class="form-group col-md-3 text-center align-items-center">
 					  <label for="inputDate">Genero</label><br>
@@ -51,19 +52,19 @@
 
 					  <div class="form-group col-md-2">
 						  <label for="inputDate">Telefono</label>
-						  <input type="number" class="form-control" id="inputDate" placeholder="">
+						  <input type="number" name="cel" class="form-control" id="inputDate" placeholder="">
 					  </div>
 					  <div class="form-group col-md-2">
 						  <label for="inputDate">Nacionalidad</label>
-						  <input type="text" class="form-control" id="inputDate" placeholder="">
+						  <input type="text" name="nationality" class="form-control" id="inputDate" placeholder="">
 					  </div>
 					  <div class="form-group col-md-3">
 						  <label for="inputDate">Correo electronico</label>
-						  <input type="email" class="form-control" id="inputDate" placeholder="">
+						  <input type="email" name="email" class="form-control" id="inputDate" placeholder="">
 					  </div>
 					  <div class="form-group col-md-2">
 						  <label for="inputDate">Contraseña</label>
-						  <input type="password" class="form-control" id="inputDate" placeholder="">
+						  <input type="password" name="password" class="form-control" id="inputDate" placeholder="">
 					  </div>
 					  <div class="form-group col-md-3">
 						  <label for="inputDate">Repetir Contraseña</label>
