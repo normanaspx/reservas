@@ -16,12 +16,12 @@
 
 	@forelse($special_service as $service)
 	    <tr>
-		   <td> {{$service->ID_SERVICIO}}</td>
-		   <td> {{$service->NOMBRE}}</td>
-		   <td id="holis"> {{$service->ORIGEN}}</td>
-		   <td> {{$service->DESTINO}}</td>
-		   <td> {{number_format($service->PRECIO, 2)}}</td>
-		   <td> {{$service->HORARIO_SALIDA}}</td>
+		   <td id=""> {{$service->ID_SERVICIO}}</td>
+		   <td id="nombre"> {{$service->NOMBRE}}</td>
+		   <td id="origen"> {{$service->ORIGEN}}</td>
+		   <td id="destino"> {{$service->DESTINO}}</td>
+		   <td id="precio"> {{number_format($service->PRECIO, 2)}}</td>
+		   <td id="horario"> {{$service->HORARIO_SALIDA}}</td>
 		   <td><a href="#" onclick="test()">Seleccionar</a></td>
 	    </tr>
 	@empty

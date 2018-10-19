@@ -54,9 +54,23 @@
    </div>
 </div>
 <br>
+<div class="row">
+	<div class="col col-sm-6 col-md-6">
+		<label for=""><span class="circle" style="background-color:red;"></span>Ocupado</label>
+		<label for=""><span class="circle" style="background-color:green;"></span>Disponible</label>
+		<label for=""><span class="circle" style="background-color:gray;"></span>Seleccionado</label>
+	</div>
+	<div class="col col-sm-6 sol-md-6 align-middle" >
+		<form class="" action="index.html" method="post">
+			<button type="button" name="button" style="float:right;" class="btn btn-primary">Verificar</button>
+		</form>
+	</div>
+</div>
+<hr>
 <div class="row" id="seats">
 	@include('reservations.seats')
 </div>
+<br>
 @endsection
 
 @section('scripts')
