@@ -54,7 +54,7 @@
    </div>
 </div>
 <br>
-<div class="row">
+<div class="row" id="header">
 	<div class="col col-sm-6 col-md-6">
 		<label for=""><span class="circle" style="background-color:red;"></span>Ocupado</label>
 		<label for=""><span class="circle" style="background-color:green;"></span>Disponible</label>
@@ -62,7 +62,7 @@
 	</div>
 	<div class="col col-sm-6 sol-md-6 align-middle" >
 		<form class="" action="index.html" method="post">
-			<button type="button" name="button" style="float:right;" class="btn btn-primary">Verificar</button>
+			<button type="button" name="button" style="float:right;" class="btn btn-primary">Aceptar</button>
 		</form>
 	</div>
 </div>

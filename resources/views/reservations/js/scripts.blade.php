@@ -30,24 +30,25 @@
 	var arr=[], state=true;
 	$(document).ready(function(){
 		$('#seats').hide();
+		$('#header').hide();
 		$(".dot").click(function(){
 		    $(this).css('background-color', 'grey');
 		    var valueCell = $(this).html();
 		    arr.push(valueCell);
 		});
 	});
-	function test() {
-		$('#tables').hide();
-		$('#seats').show();
-		alert(document.getElementById("myTable").rows[0].cells[0].innerHTML);
-		var name = $('#nombre').html();
-		var origin = $('#origen').html();
-		var destiny = $('#destino').html();
-		var price = $('#precio').html();
-		var schedule = $('#horario').html();
-		$('#priceTitle').html("Precio: "+price);
-		$('#destinyTitle').html("Destino: "+schedule);
-		$('#scheduleTitle').html("Horario: "+destiny);
+	function myFunction(x) {
+	    //alert("Cell index is: " + x.rowIndex);
+	    $("#tables").fadeOut();
+	    //$('#tables').hide();
+	    $('#seats').show();
+	    $('#header').show();
+	    var a = document.getElementById("especial").rows[x.rowIndex].cells[3];
+	    var schedule = a.innerHTML;
+	    var origin  = document.getElementById("especial").rows[x.rowIndex].cells[5].innerHTML;
+	    var price  = document.getElementById("especial").rows[x.rowIndex].cells[4].innerHTML;
+	    $('#priceTitle').html("Precio: "+price);
+	    $('#destinyTitle').html("Destino: "+origin);
+	    $('#scheduleTitle').html("Horario: "+schedule);
 	}
-
 </script>
