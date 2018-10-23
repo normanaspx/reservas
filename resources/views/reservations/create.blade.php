@@ -54,6 +54,9 @@
    </div>
 </div>
 <br>
+<div id="resume-title">
+	<h1 id="resumetitle"></h1>
+</div>
 <div class="row" id="header">
 	<div class="col col-sm-6 col-md-6">
 		<label for=""><span class="circle" style="background-color:red;"></span>Ocupado</label>
@@ -61,14 +64,16 @@
 		<label for=""><span class="circle" style="background-color:gray;"></span>Seleccionado</label>
 	</div>
 	<div class="col col-sm-6 sol-md-6 align-middle" >
-		<form class="" action="index.html" method="post">
-			<button type="button" name="button" style="float:right;" class="btn btn-primary">Aceptar</button>
-		</form>
+		<a href="#" style="float:right;" class="btn btn-outline-dark" onclick="resume()">Continuar</a>
+
 	</div>
 </div>
 <hr>
 <div class="row" id="seats">
 	@include('reservations.seats')
+</div>
+<div class="row" id="resume">
+	@include('reservations.resume')
 </div>
 <br>
 @endsection

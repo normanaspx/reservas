@@ -17,14 +17,14 @@
 </head>
 
 <body>
-<nav class="navbar navbar-dark fixed-top bg-danger flex-md-nowrap p-0 shadow navbar-expand-lg" >
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow navbar-expand-lg" >
     <a class="navbar-brand col-sm-3 col-md-3 mr-0" href="">Buses</a>
     <input class="form-control form-control-dark w-100 " type="text" placeholder="Buscar..." aria-label="Search">
     <div class="panel-body">
         <form method="POST" action="">
             <ul class="navbar-nav px-3">
                 <li class="nav-item text-nowrap">
-                    <button class="btn btn-primary btn-block bg-danger" style="border-color:#dc3545;">Desconectar</button>
+                    <button class="btn btn-primary btn-block bg-dark" style="border-color:black;">Desconectar</button>
 
                 </li>
             </ul>

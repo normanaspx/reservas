@@ -1,7 +1,8 @@
 <div class="col col-sm-4 col-md-4 text-justify">
-	<h4 id="priceTitle"></h4>
-	<h4 id="destinyTitle"></h4>
-	<h4 id="scheduleTitle"></h4>
+	<label id="priceTitle"></label><br>
+	<label id="destinyTitle"></label><br>
+	<label id="scheduleTitle"></label>
+
 </div>
 <div class="col col-sm-3 col-md-3 col-lg-3" style="float:left">
 	<table style="float:right">
@@ -91,4 +92,3 @@
   	 </tr>
      </table>
 </div>
-<p id="demo"></p>

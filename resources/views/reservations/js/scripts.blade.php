@@ -27,28 +27,56 @@
 }
 </style>
 <script type="text/javascript">
-	var arr=[], state=true;
+	var arr=[];
+	var price, schedule, total, destiny;
 	$(document).ready(function(){
 		$('#seats').hide();
 		$('#header').hide();
+		$('#resume').hide();
 		$(".dot").click(function(){
-		    $(this).css('background-color', 'grey');
-		    var valueCell = $(this).html();
-		    arr.push(valueCell);
+			var color=$(this).css('background-color');
+			if(color=='rgb(2, 192, 60)'){
+				$(this).css('background-color', 'grey');
+				var valueCell = $(this).html();
+				arr.push(valueCell);
+				total=arr.length*price;
+				console.log(total);
+			}else{
+				$(this).css('background-color', 'rgb(2, 192, 60)');
+				var valueCell = $(this).html();
+				for (var i = 0; i < arr.length; i++) {
+					if(arr[i]==valueCell){
+						arr.splice(i, 1);
+						total=arr.length*price;
+						console.log(total);
+					}
+				}
+			}
 		});
 	});
 	function myFunction(x) {
-	    //alert("Cell index is: " + x.rowIndex);
 	    $("#tables").fadeOut();
 	    //$('#tables').hide();
 	    $('#seats').show();
 	    $('#header').show();
 	    var a = document.getElementById("especial").rows[x.rowIndex].cells[3];
-	    var schedule = a.innerHTML;
-	    var origin  = document.getElementById("especial").rows[x.rowIndex].cells[5].innerHTML;
-	    var price  = document.getElementById("especial").rows[x.rowIndex].cells[4].innerHTML;
-	    $('#priceTitle').html("Precio: "+price);
-	    $('#destinyTitle').html("Destino: "+origin);
+	    schedule = a.innerHTML;
+	    destiny  = document.getElementById("especial").rows[x.rowIndex].cells[5].innerHTML;
+	    price  = document.getElementById("especial").rows[x.rowIndex].cells[4].innerHTML;
+	    $('#priceTitle').html("Precio: Q"+price);
+	    $('#destinyTitle').html("Destino: "+destiny);
 	    $('#scheduleTitle').html("Horario: "+schedule);
+	}
+	function resume(){
+		$('#seats').fadeOut();
+		$('#header').fadeOut();
+		$('#resume').fadeIn();
+		$('#price').html("Precio: Q"+price);
+		$('#destiny').html("Destino: "+destiny);
+		$('#schedule').html("Horario: "+schedule);
+		$('#asientos').html("Asientos: "+arr);
+		$('#total').html("Total: Q"+total);
+		$('#resume-title').fadeIn();
+		$('#resumetitle').html('Resumen');
 	}
 </script>

@@ -11,6 +11,7 @@
 	Route::view('/gallery', 'gallery/gallery');
 	//Route::post('/login','Auth\LoginController@login')->name('showlogin');
 	Route::post('/signup','SignupController@store');
+	Route::post('/reservation.create','ReservationController@store');
 	//Route::view('/contact', 'services/contact');
 	Route::get('/service','ServiceController@index')
     ->name('service');
