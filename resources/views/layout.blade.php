@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
     <title>@yield('title')</title>
-
+      <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Bootstrap core CSS -->
     <link href="{{asset("css/bootstrap.min.css")}}" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -21,14 +21,18 @@
     <a class="navbar-brand col-sm-3 col-md-3 mr-0" href="">Buses</a>
     <input class="form-control form-control-dark w-100 " type="text" placeholder="Buscar..." aria-label="Search">
     <div class="panel-body">
-        <form method="POST" action="">
             <ul class="navbar-nav px-3">
                 <li class="nav-item text-nowrap">
-                    <button class="btn btn-primary btn-block bg-dark" style="border-color:black;">Desconectar</button>
-
+				<a class="btn btn-primary btn-block bg-dark" href="{{ route('logout') }}"
+				   onclick="event.preventDefault();
+				   document.getElementById('logout-form').submit();">
+				Desconectar
+				</a>
+				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+				   @csrf
+				</form>
                 </li>
             </ul>
-        </form>
     </div>
 </nav>
 

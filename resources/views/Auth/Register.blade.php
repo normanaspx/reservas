@@ -1,3 +1,4 @@
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -9,7 +10,15 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
+				    <div class="row">
+				    		<input type="text" name="nombre" value="" placeholder="nombres"><br>
+						<input type="text" name="apellidos" value="" placeholder="APELLIDOS"><br>
+						<input type="text" name="tel" value="" placeholder="tel">
+						<br><input type="date" name="fecha" value=""><br>
+						<input type="radio" name="genero" value="femenino">
+						<input type="radio" name="genero" value="masculino"><br>
+						<input type="text" name="nacionalidad" value="">
+				    </div>
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
@@ -37,7 +46,7 @@
                                 @endif
                             </div>
                         </div>
-
+				    <input type="text" name="dpi" value="">
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
