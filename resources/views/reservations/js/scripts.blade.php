@@ -11,7 +11,6 @@
 	padding-top: 13px;
 	border-radius: 3px;
 	box-shadow: 3px 3px black;
-
 }
 .circle {
 	height: 25px;
@@ -63,20 +62,48 @@
 	    schedule = a.innerHTML;
 	    destiny  = document.getElementById("especial").rows[x.rowIndex].cells[5].innerHTML;
 	    price  = document.getElementById("especial").rows[x.rowIndex].cells[4].innerHTML;
+	    id  = document.getElementById("especial").rows[x.rowIndex].cells[0].innerHTML;
+	    service  = document.getElementById("especial").rows[x.rowIndex].cells[1].innerHTML;
 	    $('#priceTitle').html("Precio: Q"+price);
 	    $('#destinyTitle').html("Destino: "+destiny);
-	    $('#scheduleTitle').html("Horario: "+schedule);
+	    $('#id_ser').val(id);
+	    $('#service').val(service);
 	}
 	function resume(){
 		$('#seats').fadeOut();
 		$('#header').fadeOut();
 		$('#resume').fadeIn();
-		$('#price').html("Precio: Q"+price);
-		$('#destiny').html("Destino: "+destiny);
-		$('#schedule').html("Horario: "+schedule);
-		$('#asientos').html("Asientos: "+arr);
-		$('#total').html("Total: Q"+total);
+		$('#price').val("Precio: Q"+price);
+		$('#destiny').val("Destino: "+destiny);
+		$('#schedule').val("Horario: "+schedule);
+		$('#asientos').val("Asientos: "+arr);
+		$('#total').val("Total: Q"+total);
 		$('#resume-title').fadeIn();
 		$('#resumetitle').html('Resumen');
+
 	}
+	function save(){
+	   if(arr.length!=0){
+		   const arrdata = {
+			  _token: "{{ csrf_token() }}",
+			  id:  $('#id_user').val(),
+			  id_servicio:  $('#id_ser').val(),
+			  asientos: arr
+		   };
+		   jQuery.ajax({
+			  url: "{{ route('reservation.create') }}",
+			  type: 'POST',
+			  data: arrdata,
+			  success: function(result){
+				  alert('Reservado correctamente');
+				 document.location.href="{{route('create')}}";
+			  },
+			  error: function(jqXHR, textStatus, errorThrown) {
+				 alert('Lo Sentimos, no ha sido posible crear la reserva.');
+			  }
+		   });
+	   }else{
+		   alert('Debe asignar un asiento por lo menor');
+	   }
+   }
 </script>

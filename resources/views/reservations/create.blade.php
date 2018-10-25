@@ -20,7 +20,6 @@
 </div>
 @endsection
 @section('content')
-<h1>{{ Auth::user()->name }} </h1>
 <div class="row" id="tables">
    <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">

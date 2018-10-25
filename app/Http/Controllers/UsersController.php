@@ -9,12 +9,9 @@ class UsersController extends Controller
     public function store(request $data){
 	    $data = request()->all();
 	    Signup::create([
-		   'NOMBRES' => $data['names'],
-		   'APELLIDOS'   => $data['second_name'],
-		   'TELEFONO'   => $data['cel'],
-		   'FECHA_NACIMIENTO'   => $data['birthday_date'],
-		   'GENERO'   => $data['customRadio'],
-		   'NACIONALIDAD'   => $data['nationality']
+		   'ID_USUARIO' => $data['names'],
+		   'ID_USUARIO'   => $data['second_name'],
+		   'FECHA' => $data['second_name'],
 	    ]);
 	    return view('main/welcome');
     }

@@ -16,7 +16,7 @@
 
 	@forelse($special_service as $service)
 	    <tr   onclick="myFunction(this)">
-		   <td id=""> {{$service->ID_SERVICIO}}</td>
+		   <td id="id_service"> {{$service->ID_SERVICIO}}</td>
 		   <td id="nombre"> {{$service->NOMBRE}}</td>
 		   <td id="origen"> {{$service->ORIGEN}}</td>
 		   <td id="destino"> {{$service->DESTINO}}</td>

@@ -13,7 +13,7 @@
 	Route::view('/gallery', 'gallery/gallery');
 	//Route::post('/login','Auth\LoginController@login')->name('showlogin');
 	Route::post('/signup','SignupController@store');
-	Route::post('/reservation.create','ReservationController@store');
+	Route::post('/reservation.create','ReservationController@store')->name('reservation.create');;
 	//Route::view('/contact', 'services/contact');
 
 #Usuarios
