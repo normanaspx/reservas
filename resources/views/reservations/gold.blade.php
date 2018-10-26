@@ -14,7 +14,7 @@
    <tbody>
 
    @forelse($gold_service as $service)
-	  <tr>
+	  <tr onclick="myFunction(this)">
 		 <td> {{$service->ID_SERVICIO}}</td>
 		 <td> {{$service->NOMBRE}}</td>
 		 <td> {{$service->ORIGEN}}</td>
