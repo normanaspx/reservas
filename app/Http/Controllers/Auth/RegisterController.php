@@ -51,7 +51,6 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-		  'dpi' => 'required|string',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -64,22 +63,21 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
+    {	//dd($data);
 	    $new = new Signup();
-	    $new->NOMBRES=$data['nombre'];
+	    $new->NOMBRES=$data['name'];
 	    $new->APELLIDOS=$data['apellidos'];
 	    $new->TELEFONO=$data['tel'];
 	    $new->FECHA_NACIMIENTO=$data['fecha'];
 	    $new->GENERO=$data['genero'];
-	    $new->NACIONALIDAD=$data['nacionalidad'];
+	    $new->NACIONALIDAD=$data['nac'];
 	    $new->save();
 	    $id=$new->ID_CLIENTE;
-	    
+	    //dd($data, $id);
         return User::create([
             'name' => $data['name'],
-		  'ID_CLIENTE' => $id,
-		  'dpi' => $data['dpi'],
             'email' => $data['email'],
+		  'ID_CLIENTE' => $id,
             'password' => Hash::make($data['password']),
         ]);
     }
