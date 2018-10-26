@@ -29,5 +29,13 @@ class SignupController extends Controller
 	    $new->NACIONALIDAD=$request->nationality;
 	    $new->save();
 	    $id=$new->ID_CLIENTE;
+
+	    $user = new Users();
+	    $user->ID_CLIENTE = $id;
+	    $user->EMAIL = $request->email;
+	    $user->PASSWORD = $request->password;
+	    $user->FECHA_CREACION = now();
+	    $user->save();
+		    return view('reservations/create');
     }
 }

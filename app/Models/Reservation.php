@@ -10,7 +10,7 @@ class Reservation extends Model
      protected $primaryKey = 'ID_RESERVA';
      protected $table = 'RESERVA';
      protected $fillable = [
- 	   'id',
+ 	   'ID_USUARIO',
  	   'ID_SERVICIO',
  	   'FECHA'
      ];
