@@ -1,14 +1,11 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
-
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Models\Signup;
-
 class RegisterController extends Controller
 {
     /*
@@ -21,16 +18,13 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-
     use RegistersUsers;
-
     /**
      * Where to redirect users after registration.
      *
      * @var string
      */
     protected $redirectTo = '/create';
-
     /**
      * Create a new controller instance.
      *
@@ -40,7 +34,6 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-
     /**
      * Get a validator for an incoming registration request.
      *
@@ -51,12 +44,10 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-		  'dpi' => 'required|string',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
-
     /**
      * Create a new user instance after a valid registration.
      *
@@ -64,22 +55,21 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
+    {	//dd($data);
 	    $new = new Signup();
-	    $new->NOMBRES=$data['nombre'];
+	    $new->NOMBRES=$data['name'];
 	    $new->APELLIDOS=$data['apellidos'];
 	    $new->TELEFONO=$data['tel'];
 	    $new->FECHA_NACIMIENTO=$data['fecha'];
 	    $new->GENERO=$data['genero'];
-	    $new->NACIONALIDAD=$data['nacionalidad'];
+	    $new->NACIONALIDAD=$data['nac'];
 	    $new->save();
 	    $id=$new->ID_CLIENTE;
-	    
+	    //dd($data, $id);
         return User::create([
             'name' => $data['name'],
-		  'ID_CLIENTE' => $id,
-		  'dpi' => $data['dpi'],
             'email' => $data['email'],
+		  'ID_CLIENTE' => $id,
             'password' => Hash::make($data['password']),
         ]);
     }

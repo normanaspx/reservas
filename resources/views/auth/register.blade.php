@@ -10,11 +10,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-<<<<<<< HEAD:resources/views/Auth/Register.blade.php
-=======
-
->>>>>>> 555bfbfe7d1e52749eae5f9e45fff7ce4d9ac28d:resources/views/auth/register.blade.php
-                        <div class="form-group row">
+				     <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
@@ -82,7 +78,7 @@
 				<div class="form-group row">
 				    <label for="nac" class="col-md-4 col-form-label text-md-right">{{ __('Nacionalidad') }}</label>
 				    <div class="col-md-6">
-					    <input id="nac" type="date" class="form-control{{ $errors->has('nac') ? ' is-invalid' : '' }}"
+					    <input id="nac" type="text" class="form-control{{ $errors->has('nac') ? ' is-invalid' : '' }}"
 					    name="nac" value="{{ old('nac') }}" required autofocus>
 					   @if ($errors->has('nac'))
 						  <span class="invalid-feedback" role="alert">

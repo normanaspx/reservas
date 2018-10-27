@@ -22,11 +22,3 @@ Auth::routes();
 //Route::post('/login','Auth\LoginController@list')->name('login');
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
