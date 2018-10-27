@@ -10,6 +10,7 @@ class Seat extends Model
          protected $primaryKey = 'ID_ASIENTO';
          protected $table = 'ASIENTO';
          protected $fillable = [
-     	   'ASIENTO';
+     	   'ASIENTO',
+		   'Estado',
          ];
 }

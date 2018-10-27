@@ -8,6 +8,9 @@ use App\Models\Service;
 
 class ServiceController extends Controller
 {
+
+	
+
     public function index(){
 		$special_service = DB::table('servicio')
 		->join('detalle_servicio', 'servicio.ID_DETALLE_SERVICIO', '=', 'DETALLE_SERVICIO.ID_DETALLE_SERVICIO')

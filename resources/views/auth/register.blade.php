@@ -10,8 +10,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
-                        <div class="form-group row">
+				     <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
@@ -24,7 +23,70 @@
                                 @endif
                             </div>
                         </div>
+				    <div class="form-group row">
+					   <label for="apellidos" class="col-md-4 col-form-label text-md-right">{{ __('Apellidos') }}</label>
 
+					   <div class="col-md-6">
+						  <input id="apellidos" type="text" class="form-control{{ $errors->has('apellidos') ? ' is-invalid' : '' }}"
+						  name="apellidos" value="{{ old('apellidos') }}" required autofocus>
+
+						  @if ($errors->has('apellidos'))
+							 <span class="invalid-feedback" role="alert">
+							     <strong>{{ $errors->first('apellidos') }}</strong>
+							 </span>
+						  @endif
+					   </div>
+				   </div>
+				   <div class="form-group row">
+					  <label for="tel" class="col-md-4 col-form-label text-md-right">{{ __('Tel') }}</label>
+
+					  <div class="col-md-6">
+						 <input id="tel" type="text" class="form-control{{ $errors->has('tel') ? ' is-invalid' : '' }}"
+						 name="tel" value="{{ old('tel') }}" required autofocus>
+
+						 @if ($errors->has('tel'))
+							<span class="invalid-feedback" role="alert">
+							    <strong>{{ $errors->first('tel') }}</strong>
+							</span>
+						 @endif
+					  </div>
+				  </div>
+				  <div class="form-group row">
+					 <label for="genero" class="col-md-4 col-form-label text-md-right">{{ __('Genero') }}</label>
+					 <div class="col-md-6">
+						<input id="genero" type="radio" name="genero" value="femenino" required autofocus>Femenino<br>
+						<input id="genero" type="radio" name="genero" value="masculino" required autofocus>Masculino
+						@if ($errors->has('genero'))
+						    <span class="invalid-feedback" role="alert">
+							   <strong>{{ $errors->first('genero') }}</strong>
+						    </span>
+						@endif
+					 </div>
+				 </div>
+				 <div class="form-group row">
+				     <label for="fecha" class="col-md-4 col-form-label text-md-right">{{ __('Fecha de nacimiento') }}</label>
+				     <div class="col-md-6">
+						<input id="fecha" type="date" class="form-control{{ $errors->has('tel') ? ' is-invalid' : '' }}"
+						name="fecha" value="{{ old('fecha') }}" required autofocus>
+					    @if ($errors->has('fecha'))
+						   <span class="invalid-feedback" role="alert">
+							  <strong>{{ $errors->first('fecha') }}</strong>
+						   </span>
+					    @endif
+				     </div>
+			     </div>
+				<div class="form-group row">
+				    <label for="nac" class="col-md-4 col-form-label text-md-right">{{ __('Nacionalidad') }}</label>
+				    <div class="col-md-6">
+					    <input id="nac" type="text" class="form-control{{ $errors->has('nac') ? ' is-invalid' : '' }}"
+					    name="nac" value="{{ old('nac') }}" required autofocus>
+					   @if ($errors->has('nac'))
+						  <span class="invalid-feedback" role="alert">
+							 <strong>{{ $errors->first('nac') }}</strong>
+						  </span>
+					   @endif
+				    </div>
+			    </div>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
