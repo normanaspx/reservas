@@ -10,6 +10,10 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
+<<<<<<< HEAD:resources/views/Auth/Register.blade.php
+=======
+
+>>>>>>> 555bfbfe7d1e52749eae5f9e45fff7ce4d9ac28d:resources/views/auth/register.blade.php
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
