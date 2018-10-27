@@ -11,6 +11,7 @@ class ReservationDetail extends Model
          protected $table = 'DETALLE_RESERVA';
          protected $fillable = [
      	   'ID_RESERVA',
-     	   'ID_ASIENTO'
+     	   'ID_ASIENTO',
+		   'FECHA'
          ];
 }
