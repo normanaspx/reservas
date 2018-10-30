@@ -25,6 +25,7 @@
 	float: left;
 }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
 <script type="text/javascript">
 	var arr=[];
 	var price, schedule, total, destiny;
@@ -67,7 +68,12 @@
 	    $('#priceTitle').html("Precio: Q"+price);
 	    $('#destinyTitle').html("Destino: "+destiny);
 	    $('#id_ser').val(id);
-	    $('#service').val(service);
+	    //$('#service').val(service);
+
+	    document.getElementById('service').innerHTML=service;
+	    $('#id_ser').html(id);
+	    $('#service').html(service);
+
 	}
 	function resume(){
 		$('#seats').fadeOut();
@@ -78,8 +84,15 @@
 		$('#schedule').val("Horario: "+schedule);
 		$('#asientos').val("Asientos: "+arr);
 		$('#total').val("Total: Q"+total);
+
 		$('#resume-title').fadeIn();
 		$('#resumetitle').html('Resumen');
+
+		$('#price').html("Q"+price);
+		$('#destiny').html(destiny);
+		$('#schedule').html(schedule);
+		$('#asientos').html(arr+" ");
+		$('#total').html("Q"+total);
 
 	}
 	function save(){
@@ -95,8 +108,28 @@
 			  type: 'POST',
 			  data: arrdata,
 			  success: function(result){
-				  alert('Reservado correctamente');
-				 document.location.href="{{route('create')}}";
+				  var doc = new jsPDF()
+				  doc.setFontSize(22);
+				  doc.text(20, 20, 'Detalle de reserva');
+				  doc.setLineWidth(0.5);
+				  doc.line(20, 25, 150, 25);
+				  doc.setFontSize(16);
+				  var a = $('#user').val();
+				  doc.text(20, 40, 'Nombre: '+a);
+				  var specialElementHandlers = {
+				  	'#editor': function(element, renderer){
+				  		return true;
+				  	},
+				  	'.controls': function(element, renderer){
+				  		return true;
+				  	}
+				  };
+				  doc.fromHTML($('#xd').get(0), 15, 40, {
+				  	'width': 170,
+				  	'elementHandlers': specialElementHandlers
+				  });
+				  doc.save('boleta-bus.pdf');
+
 			  },
 			  error: function(jqXHR, textStatus, errorThrown) {
 				 alert('Lo Sentimos, no ha sido posible crear la reserva.');

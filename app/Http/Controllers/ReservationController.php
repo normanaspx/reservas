@@ -16,7 +16,7 @@ class ReservationController extends Controller
 	    $this->middleware('auth');
 	}
     public function store(request $request){
-	 //   dd($request);
+	   // dd($request);
 		$reservation = new Reservation();
 		$reservation->id=$request->id;
 		$reservation->ID_SERVICIO=$request->id_servicio;
@@ -35,6 +35,6 @@ class ReservationController extends Controller
 			$detail[$i]->ID_ASIENTO = $seat[$i]->ID_ASIENTO;
 			$detail[$i]->save();
 		}
-	    return response()->json(['success'=>'Reserva Creada Correctamente']);
+	    return redirect()->route('home');
     }
 }
