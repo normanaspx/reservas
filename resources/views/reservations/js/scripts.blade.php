@@ -75,6 +75,27 @@
 	    $('#service').html(service);
 
 	}
+	function myFunction1(x) {
+	    $("#tables").fadeOut();
+	    //$('#tables').hide();
+	    $('#seats').show();
+	    $('#header').show();
+	    var a = document.getElementById("regular").rows[x.rowIndex].cells[3];
+	    schedule = a.innerHTML;
+	    destiny  = document.getElementById("regular").rows[x.rowIndex].cells[5].innerHTML;
+	    price  = document.getElementById("regular").rows[x.rowIndex].cells[4].innerHTML;
+	    id  = document.getElementById("regular").rows[x.rowIndex].cells[0].innerHTML;
+	    service  = document.getElementById("regular").rows[x.rowIndex].cells[1].innerHTML;
+	    $('#priceTitle').html("Precio: Q"+price);
+	    $('#destinyTitle').html("Destino: "+destiny);
+	    $('#id_ser').val(id);
+	    //$('#service').val(service);
+
+	    document.getElementById('service').innerHTML=service;
+	    $('#id_ser').html(id);
+	    $('#service').html(service);
+
+	}
 	function resume(){
 		$('#seats').fadeOut();
 		$('#header').fadeOut();
@@ -129,6 +150,7 @@
 				  	'elementHandlers': specialElementHandlers
 				  });
 				  doc.save('boleta-bus.pdf');
+				  document.location.href="{{route('create')}}";
 
 			  },
 			  error: function(jqXHR, textStatus, errorThrown) {

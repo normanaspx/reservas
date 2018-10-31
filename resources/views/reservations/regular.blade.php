@@ -1,4 +1,4 @@
-<table class="table table-striped table-sm">
+<table class="table table-striped table-sm" id="regular">
 
    <thead>
    <tr>
@@ -14,13 +14,13 @@
    <tbody>
 
    @forelse($regular_service as $service)
-	  <tr onclick="myFunction(this)">
-		 <td> {{$service->ID_SERVICIO}}</td>
-		 <td> {{$service->NOMBRE}}</td>
-		 <td> {{$service->ORIGEN}}</td>
-		 <td> {{$service->DESTINO}}</td>
-		 <td> {{number_format($service->PRECIO, 2)}}</td>
-		 <td> {{$service->HORARIO_SALIDA}}</td>
+	  <tr onclick="myFunction1(this)">
+		 <td id="id_service"> {{$service->ID_SERVICIO}}</td>
+		 <td id="nombre"> {{$service->NOMBRE}}</td>
+		 <td id="origen"> {{$service->ORIGEN}}</td>
+		 <td id="destino"> {{$service->DESTINO}}</td>
+		 <td id="precio"> {{number_format($service->PRECIO, 2)}}</td>
+		 <td id="horario"> {{$service->HORARIO_SALIDA}}</td>
 		 <td> <a href="#">Seleccionar</a></td>
 	  </tr>
    @empty

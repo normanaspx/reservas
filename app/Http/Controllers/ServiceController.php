@@ -9,7 +9,7 @@ use App\Models\Service;
 class ServiceController extends Controller
 {
 
-	
+
 
     public function index(){
 		$special_service = DB::table('servicio')
@@ -26,6 +26,13 @@ class ServiceController extends Controller
 		->join('detalle_servicio', 'servicio.ID_DETALLE_SERVICIO', '=', 'DETALLE_SERVICIO.ID_DETALLE_SERVICIO')
 		->select('ID_SERVICIO', 'NOMBRE', 'ORIGEN', 'DESTINO', 'HORARIO_SALIDA', 'PRECIO')
 		->where('NOMBRE', '=', 'Clase oro')
+		->orderBy('NOMBRE')
+		->get();
+
+		$regular_service = DB::table('servicio')
+		->join('detalle_servicio', 'servicio.ID_DETALLE_SERVICIO', '=', 'DETALLE_SERVICIO.ID_DETALLE_SERVICIO')
+		->select('ID_SERVICIO', 'NOMBRE', 'ORIGEN', 'DESTINO', 'HORARIO_SALIDA', 'PRECIO')
+		->where('NOMBRE', '=', 'Clase regular')
 		->orderBy('NOMBRE')
 		->get();
 
